@@ -2,9 +2,11 @@ package com.example.genchi.controller;
 
 import com.example.genchi.service.UserService;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@RestController("v1/user")
+@RestController()
+@RequestMapping("v1/user")
 public class UserController {
 
     private final UserService userService;
