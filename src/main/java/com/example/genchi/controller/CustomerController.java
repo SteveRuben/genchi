@@ -9,7 +9,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@RestController("v1/customer")
+@RestController()
+@RequestMapping( "v1/customer")
 public class CustomerController {
 
     private final CustomerService userService;

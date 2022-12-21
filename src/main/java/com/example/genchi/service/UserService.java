@@ -6,6 +6,8 @@ import com.example.genchi.model.UserDto;
 import com.example.genchi.repository.UserRepository;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -13,7 +15,7 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
-public class UserService {
+public class UserService implements UserDetailsService {
 
     private final UserRepository userRepository ;
 
@@ -32,5 +34,9 @@ public class UserService {
         UserDto dto = new UserDto();
 
         return dto;
+    }
+
+    public UserDetails loadUserByUsername(String email) {
+        return null;
     }
 }

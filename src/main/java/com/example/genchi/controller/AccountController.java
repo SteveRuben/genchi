@@ -6,8 +6,8 @@ import com.example.genchi.service.AccountService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-@RestController(value = "v1/account")
-@RequestMapping(value = "")
+@RestController()
+@RequestMapping(value =  "v1/account")
 public class AccountController {
 
     private final AccountService accountService;

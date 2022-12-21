@@ -37,14 +37,13 @@ public class CustomerService {
         dto.setId(customer.getId());
         dto.setName(customer.getName());
         dto.setSurName(customer.getSurName());
-        dto.setAccounts(customer.getAccounts().stream().map( account -> toAccountDto(account)).collect(Collectors.toSet()));
+        dto.setAccounts(customer.getAccounts().stream().map(this::toAccountDto).collect(Collectors.toSet()));
         return dto;
     }
 
     private AccountDto toAccountDto(Account account) {
         AccountDto dto = new AccountDto();
         dto.setAccountNumber(account.getAccountNumber());
-        dto.setType(account.getType());
         dto.setInitialCredit(account.getInitialCredit());
         return dto;
     }

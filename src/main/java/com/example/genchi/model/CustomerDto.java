@@ -16,6 +16,7 @@ public class CustomerDto implements Serializable {
     private Long id;
     private String name;
     private String surName;
+    private String password;
     private Set<AccountDto> accounts = new LinkedHashSet<>();
 
     public CustomerDto() {
@@ -38,6 +39,14 @@ public class CustomerDto implements Serializable {
 
     public String getName() {
         return name;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public void setName(String name) {

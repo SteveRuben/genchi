@@ -3,6 +3,7 @@ package com.example.genchi.entities;
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.util.Date;
+import java.util.Objects;
 
 @Entity
 @Table(name = "APP_ACCOUNT")
@@ -12,6 +13,10 @@ public class Account {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SeqAccount")
     @Column(name = "ACCOUNT_ID", nullable = false)
     private Long id;
+
+    @ManyToOne
+    @JoinColumn(name = "CUSTOMER_ID", referencedColumnName = "id")
+    private Customer customer;
 
     private String accountNumber;
     private BigDecimal initialCredit;
@@ -76,5 +81,26 @@ public class Account {
 
     public void setUpdated_at(Date updated_at) {
         this.updated_at = updated_at;
+    }
+
+    public Customer getCustomer() {
+        return customer;
+    }
+
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Account account = (Account) o;
+        return Objects.equals(id, account.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
     }
 }
