@@ -1,0 +1,59 @@
+/* You can add global styles to this file, and also import other style files */
+@primary-color: #f9a825;
+@secondry-color: #ddd6;
+body {
+  padding: 0;
+  margin: 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  background-position: right;
+}
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  form {
+    background-color: @secondry-color;
+    width: 40vw;
+    padding: 40px;
+    border-radius: 4px;
+
+    input {
+      height: 50px;
+      padding: 5px 15px;
+      width: 100%;
+      outline: none;
+      border: 0px;
+      margin-bottom: 20px;
+      box-sizing: border-box;
+      font-size: 18px;
+    }
+    button {
+      padding: 15px;
+      width: 100%;
+      color: #fff;
+      font-size: 22px;
+      border: 0px;
+      cursor: pointer;
+      background-color: @primary-color;
+      &:hover {
+        background-color: #8d5905;
+      }
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+}
+@media (max-width: 900px) {
+  body{
+    background-position: unset;
+  }
+  form {
+    width: 70vw !important;
+    padding: 30px !important;
+  }
+}
